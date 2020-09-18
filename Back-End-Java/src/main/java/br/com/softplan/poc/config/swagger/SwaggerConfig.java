@@ -32,7 +32,6 @@ public class SwaggerConfig {
 				.apis(RequestHandlerSelectors.basePackage("br.com.softplan.poc"))
 				.paths(PathSelectors.ant("/**"))
 				.build()
-				.ignoredParameterTypes(AccessCredentialsDto.class)
 				.apiInfo(metaInfo())
 				.globalOperationParameters(
 						Arrays.asList(new ParameterBuilder()
