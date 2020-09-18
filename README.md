@@ -1,2 +1,2 @@
-# sofplan-solutions
+# softplan-solutions
  My Solution
