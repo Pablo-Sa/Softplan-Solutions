@@ -4,7 +4,6 @@ package br.com.softplan.poc.config.swagger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import br.com.softplan.poc.entity.People;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -31,7 +30,6 @@ public class SwaggerConfig {
 				.paths(PathSelectors.ant("/**"))
 				.build()
 				.apiInfo(metaInfo())
-				.ignoredParameterTypes(People.class)
 				.globalOperationParameters(
 						Arrays.asList(new ParameterBuilder()
 								.name("Authorization")
