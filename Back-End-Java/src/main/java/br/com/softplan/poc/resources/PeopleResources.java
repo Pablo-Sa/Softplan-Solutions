@@ -27,13 +27,13 @@ public class PeopleResources {
 	
 	@ApiOperation(value = "Retorna Todos as Pessoas")
 	@GetMapping("/people")
-	public ResponseEntity<?> getAllCourses() {
+	public ResponseEntity<?> getAllPeople() {
 		return new ResponseEntity<>(peopleService.findAll(), HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "Retorna Curso Por ID")
-	@GetMapping("/cursos/{id}")
-	public ResponseEntity<People> getCourseId(@PathVariable("id") Long id) {
+	@ApiOperation(value = "Retorna um registro de Pessoa Por ID")
+	@GetMapping("/people/{id}")
+	public ResponseEntity<People> getPeopleId(@PathVariable("id") Long id) {
 		Optional<People> people = (Optional<People>) peopleService.findById(id);
 		
 		if(people.isPresent()) {
