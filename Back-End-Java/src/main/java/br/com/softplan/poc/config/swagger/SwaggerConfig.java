@@ -4,6 +4,9 @@ package br.com.softplan.poc.config.swagger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import br.com.softplan.poc.dto.accesscredentials.AccessCredentialsDto;
+import br.com.softplan.poc.dto.token.TokenDto;
+import br.com.softplan.poc.entity.AccessCredentials;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -29,6 +32,7 @@ public class SwaggerConfig {
 				.apis(RequestHandlerSelectors.basePackage("br.com.softplan.poc"))
 				.paths(PathSelectors.ant("/**"))
 				.build()
+				.ignoredParameterTypes(AccessCredentialsDto.class)
 				.apiInfo(metaInfo())
 				.globalOperationParameters(
 						Arrays.asList(new ParameterBuilder()
