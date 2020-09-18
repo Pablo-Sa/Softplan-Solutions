@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.softplan.poc.dto.accesscredentials.AccessCredentialsDto;
 import br.com.softplan.poc.dto.token.TokenDto;
 import br.com.softplan.poc.service.TokenService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@Api(value = "Back-End POC - Softplan")
 public class AutenticationResource {
 	
 	@Autowired
@@ -27,6 +32,7 @@ public class AutenticationResource {
 	@Autowired
 	private TokenService tokenService;	  
 	
+	@ApiOperation(value = "EndPoint Destinado a Login na API")
 	@PostMapping
 	public ResponseEntity<TokenDto> authenticate(@RequestBody AccessCredentialsDto form){
 		UsernamePasswordAuthenticationToken dataLogin = form.converter();
