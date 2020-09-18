@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ErrorPostExceptionDto {
 	
-	private String campo;
-	private String erro;
+	private String field;
+	private String error;
 
 }
