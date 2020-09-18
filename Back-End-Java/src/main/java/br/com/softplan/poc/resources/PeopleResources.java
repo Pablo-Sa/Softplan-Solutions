@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,6 +53,18 @@ public class PeopleResources {
 	public ResponseEntity<People> savePeople(@RequestBody @Valid People people) {
 		return new ResponseEntity<>(peopleService.save(people), HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Atualiza um Registro")
+	@PutMapping("/people")
+	public ResponseEntity<People> updatePeople(@RequestBody @Valid People people) {
+		Optional<People> dto = (Optional<People>) peopleService.findById(people.getId());
+		
+		if(dto.isPresent()) {
+			return new ResponseEntity<>(peopleService.save(people), HttpStatus.OK);
+		  }
+		return ResponseEntity.notFound().build();
+	}
+
 
 
 }
