@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Api(value = "Back-End POC - Softplan")
 public class AutenticationResource {
 	
 	@Autowired

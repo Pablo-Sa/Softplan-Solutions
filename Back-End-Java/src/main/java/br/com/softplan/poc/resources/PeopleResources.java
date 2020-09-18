@@ -24,7 +24,6 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping(value = "/")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@Api(value = "Back-End Java - POC SoftPlan")
 public class PeopleResources {
 
 	@Autowired
