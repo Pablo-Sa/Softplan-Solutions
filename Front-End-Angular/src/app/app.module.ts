@@ -26,9 +26,12 @@ import {
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PeopleComponent } from './components/people/people.component';
+import { SearchPeopleComponent } from './components/search-people/search-people.component';
+import { LogPeopleComponent } from './components/log-people/log-people.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, FooterComponent, PeopleComponent, SearchPeopleComponent, LogPeopleComponent],
   imports: [
     BrowserModule,
     MaterialModule,
