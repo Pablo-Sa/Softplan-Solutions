@@ -1,3 +1,4 @@
+import { LogPeopleInterface } from './../models/log-people-interface';
 import { Observable } from "rxjs";
 import { PeopleInterface } from "../models/people-interface";
 import { environment } from "../../environments/environment";
@@ -10,6 +11,7 @@ import { delay, take, tap } from "rxjs/operators";
 })
 export class PeopleService {
   private serverAPI: string = `${environment.API}/people`;
+  private serverAPILog: string = `${environment.API}/log`;
 
   constructor(private http: HttpClient) {}
 
@@ -29,5 +31,11 @@ export class PeopleService {
 
   put(people: PeopleInterface): Observable<PeopleInterface> {
     return this.http.post<PeopleInterface>(this.serverAPI, people);
+  }
+
+  getLogs(): Observable<LogPeopleInterface[]> {
+    return this.http
+      .get<LogPeopleInterface[]>(this.serverAPILog)
+      .pipe(delay(1000), tap(console.log));
   }
 }

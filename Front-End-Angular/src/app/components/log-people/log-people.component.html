@@ -1,1 +1,83 @@
-<p>log-people works!</p>
+<div style="padding-left: 20px; padding-right: 20px; padding-bottom: 20px">
+    <mat-card class="example-card mat-elevation-z15">
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>supervisor_account</mat-icon></div>
+        <mat-card-title>Consulta de Clientes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Filtrar</mat-label>
+          <input
+            matInput
+            (keyup)="applyFilter($event)"
+            placeholder="Ex. João"
+            #input
+          />
+        </mat-form-field>
+  
+        <ng-template #loading>
+          <div *ngIf="errorLoading; else loadingCorrect">
+            <span> Algum erro aconteceu ao tentar listar os Cursos. </span>
+          </div>
+        </ng-template>
+  
+        <ng-template #loadingCorrect>
+          <mat-spinner></mat-spinner>
+        </ng-template>
+  
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          class="mat-elevation-z8"
+          style="border: solid; border-color: brown"
+          matSort
+          *ngIf="completeLoading; else loading"
+        >
+          <!-- idPerson Column -->
+          <ng-container matColumnDef="idPerson">
+            <th mat-header-cell *matHeaderCellDef><strong>Id do Registro</strong></th>
+            <td mat-cell *matCellDef="let element">{{ element.idPerson }}</td>
+          </ng-container>
+  
+          <!-- namePerson Column -->
+          <ng-container matColumnDef="namePerson">
+            <th mat-header-cell *matHeaderCellDef><strong>Nome da Pessoa</strong></th>
+            <td mat-cell *matCellDef="let element">{{ element.namePerson }}</td>
+          </ng-container>
+  
+          <!-- dateOfCreate Column -->
+          <ng-container matColumnDef="dateOfCreate">
+            <th mat-header-cell *matHeaderCellDef><strong>Dada de Criação do Registro</strong></th>
+            <td mat-cell *matCellDef="let element">{{ element.dateOfCreate | date:'dd-MMM-yyyy HH:mm:ss' }}</td>
+          </ng-container>
+  
+          <!-- dateOfUpdate Column -->
+          <ng-container matColumnDef="dateOfUpdate">
+            <th mat-header-cell *matHeaderCellDef>
+              <strong>Data da Última Alteração</strong>
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.dateOfUpdate | date:'dd-MMM-yyyy HH:mm:ss' }}</td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+  
+        <mat-paginator
+          [length]="ELEMENT_DATA.length"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          showFirstLastButtons
+        >
+        </mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

@@ -1,7 +1,8 @@
 import { MaterialModule } from "./material.module";
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-
+import { LOCALE_ID, NgModule } from "@angular/core";
+import ptBr  from "@angular/common/locales/pt";
+registerLocaleData(ptBr)
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -33,6 +34,7 @@ import { DatePickerPeopleComponent } from "./components/date-picker-people/date-
 import { EditModalPeopleComponent } from "./components/modals/edit-modal-people/edit-modal-people.component";
 import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-modal-people/exclusion-modal-people.component";
 import { GitUrlModalComponent } from "./components/modals/git-url-modal/git-url-modal.component";
+import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { GitUrlModalComponent } from "./components/modals/git-url-modal/git-url-
     FlexStyleBuilder,
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder,
+    { provide: LOCALE_ID, useValue: "pt-BR" },
   ],
   entryComponents: [
     DatePickerPeopleComponent,
