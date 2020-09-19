@@ -1,0 +1,47 @@
+.input {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .inputBairro {
+    min-width: 150px;
+    max-width: 292px;
+    width: 100%;
+  }
+  
+  .inputTel {
+    min-width: 150px;
+    max-width: 248px;
+    width: 100%;
+  }
+  
+  .example-card {
+    margin-top: 40px;
+    max-width: auto;
+    max-height: auto;
+    border-style: solid;
+    border-color: brown;
+    padding-bottom: 25px;
+    padding-left: 40px;
+  }
+  
+  .example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  mat-spinner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

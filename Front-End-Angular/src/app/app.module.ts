@@ -23,16 +23,30 @@ import {
   StyleUtils,
   ɵMatchMedia,
 } from "@angular/flex-layout";
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PeopleComponent } from './components/people/people.component';
-import { SearchPeopleComponent } from './components/search-people/search-people.component';
-import { LogPeopleComponent } from './components/log-people/log-people.component';
-import { DatePickerPeopleComponent } from './components/date-picker-people/date-picker-people.component';
+import { HomeComponent } from "./components/home/home.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { PeopleComponent } from "./components/people/people.component";
+import { SearchPeopleComponent } from "./components/search-people/search-people.component";
+import { LogPeopleComponent } from "./components/log-people/log-people.component";
+import { DatePickerPeopleComponent } from "./components/date-picker-people/date-picker-people.component";
+import { EditModalPeopleComponent } from "./components/modals/edit-modal-people/edit-modal-people.component";
+import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-modal-people/exclusion-modal-people.component";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, FooterComponent, PeopleComponent, SearchPeopleComponent, LogPeopleComponent, DatePickerPeopleComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    PeopleComponent,
+    SearchPeopleComponent,
+    LogPeopleComponent,
+    DatePickerPeopleComponent,
+    EditModalPeopleComponent,
+    ExclusionModalPeopleComponent,
+  ],
   imports: [
     BrowserModule,
     MaterialModule,
@@ -43,7 +57,7 @@ import { DatePickerPeopleComponent } from './components/date-picker-people/date-
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [
     StyleUtils,
@@ -58,7 +72,11 @@ import { DatePickerPeopleComponent } from './components/date-picker-people/date-
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder,
   ],
-  entryComponents:[DatePickerPeopleComponent],
+  entryComponents: [
+    DatePickerPeopleComponent,
+    ExclusionModalPeopleComponent,
+    EditModalPeopleComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

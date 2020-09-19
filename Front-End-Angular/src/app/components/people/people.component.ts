@@ -1,7 +1,7 @@
-import { PeopleServiceService } from './../../services/people-service.service';
+import { PeopleService } from './../../services/people.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PeopleInterface } from 'src/app/models/people-interface';
 import { DatePickerPeopleComponent } from '../date-picker-people/date-picker-people.component';
@@ -28,7 +28,7 @@ export class PeopleComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private snackBar: MatSnackBar,
-              private peopleServiceService: PeopleServiceService,
+              private peopleService: PeopleService,
               private router: Router) { }
 
   openSnackBar(message: string,) {
@@ -65,7 +65,7 @@ export class PeopleComponent implements OnInit {
 
     console.log(newPerson);
 
-    this.peopleServiceService.post(newPerson)
+    this.peopleService.post(newPerson)
     .subscribe(
       sucess => this.openSnackBar(`Novo Registro Salvo Com Sucesso`),
       (error:HttpErrorResponse) => {

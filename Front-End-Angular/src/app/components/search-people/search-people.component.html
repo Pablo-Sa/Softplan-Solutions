@@ -1,1 +1,134 @@
-<p>search-people works!</p>
+<div style="padding-left: 20px; padding-right: 20px; padding-bottom: 20px">
+  <mat-card class="example-card mat-elevation-z15">
+    <mat-card-header>
+      <div mat-card-avatar><mat-icon>supervisor_account</mat-icon></div>
+      <mat-card-title>Consulta de Clientes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Filtrar</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. João"
+          #input
+        />
+      </mat-form-field>
+
+      <ng-template #loading>
+        <div *ngIf="errorLoading; else loadingCorrect">
+          <span> Algum erro aconteceu ao tentar listar os Cursos. </span>
+        </div>
+      </ng-template>
+
+      <ng-template #loadingCorrect>
+        <mat-spinner></mat-spinner>
+      </ng-template>
+
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        class="mat-elevation-z8"
+        style="border: solid; border-color: brown"
+        matSort
+        *ngIf="completeLoading; else loading"
+      >
+        <!-- Nome Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><strong>Nome</strong></th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <!-- Sobrenome Column -->
+        <ng-container matColumnDef="sexo">
+          <th mat-header-cell *matHeaderCellDef><strong>Sexo</strong></th>
+          <td mat-cell *matCellDef="let element">{{ element.sexo }}</td>
+        </ng-container>
+
+        <!-- CPF / CNPJ Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef><strong>Email</strong></th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+
+        <!-- Celular Column -->
+        <ng-container matColumnDef="dateOfBirth">
+          <th mat-header-cell *matHeaderCellDef>
+            <strong>Data de Nascimento</strong>
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.dateOfBirth }}</td>
+        </ng-container>
+
+        <!-- Fixo Column -->
+        <ng-container matColumnDef="naturalness">
+          <th mat-header-cell *matHeaderCellDef>
+            <strong>Naturalidade</strong>
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.naturalness }}</td>
+        </ng-container>
+
+        <!-- Fixo Column -->
+        <ng-container matColumnDef="nationality">
+          <th mat-header-cell *matHeaderCellDef>
+            <strong>Nacionalidade</strong>
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.nationality }}</td>
+        </ng-container>
+
+        <!-- Fixo Column -->
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef><strong>CPF</strong></th>
+          <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
+        </ng-container>
+
+        <!-- Editar -->
+        <ng-container matColumnDef="editar">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              (click)="updateRow(element)"
+              mat-raised-button
+              color="warn"
+              style="width: min-content"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Excluir -->
+        <ng-container matColumnDef="excluir">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              (click)="deleteRow(element.id)"
+              mat-raised-button
+              color="warn"
+              style="width: min-content"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </table>
+
+      <mat-paginator
+        [length]="ELEMENT_DATA.length"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        showFirstLastButtons
+      >
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
