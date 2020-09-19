@@ -2,7 +2,6 @@ import { UserInterface } from "../models/user-interface";
 import { environment } from "../../environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { Subject, Observable } from "rxjs";
 import { TokenService } from "./token.service";
 

@@ -23,9 +23,10 @@ import {
   StyleUtils,
   ɵMatchMedia,
 } from "@angular/flex-layout";
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent],
   imports: [
     BrowserModule,
     MaterialModule,
