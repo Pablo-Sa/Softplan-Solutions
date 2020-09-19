@@ -1,6 +1,7 @@
 package br.com.softplan.poc.repository;
 
 import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -23,5 +24,5 @@ public interface LogCreateAndUpdateRepository extends CrudRepository<LogCreateAn
 	@Modifying
 	@Query(value = "update log_create_and_update set date_of_exclusion = :date where id_person = :id", nativeQuery = true)
 	void saveLogDelete(@Param("id") Long id, @Param("date") Date date);
-
+	
 }

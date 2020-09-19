@@ -35,5 +35,9 @@ public class PeopleService {
 	public Iterable<People> findAll() {
 		return peopleRepository.findAll();
 	}
+	
+	public Optional<People> findByCpf(String cpf) {
+		return peopleRepository.findByCpf(cpf);
+	}
 
 }

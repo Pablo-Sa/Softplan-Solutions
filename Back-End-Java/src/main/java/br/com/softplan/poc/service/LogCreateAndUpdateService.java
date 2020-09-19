@@ -1,6 +1,7 @@
 package br.com.softplan.poc.service;
 
 import java.util.Date;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,4 +30,5 @@ public class LogCreateAndUpdateService {
 	public void saveLogDelete(Long id, Date date) {
         logCreateAndUpdateRepository.saveLogDelete(id, date);
 	}
+	
 }

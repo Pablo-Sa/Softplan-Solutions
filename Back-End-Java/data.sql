@@ -1,0 +1,1 @@
+insert into access_credentials(id,login, passwd) values(1,'Pablo','$2a$10$8UbLWjcAOJHZ4uAeeMFENuhmCZdaeswDpi3aulK6yUIUlmrmoyjl2')
