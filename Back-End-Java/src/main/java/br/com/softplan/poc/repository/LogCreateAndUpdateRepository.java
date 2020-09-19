@@ -15,8 +15,8 @@ import br.com.softplan.poc.entity.LogCreateAndUpdate;
 public interface LogCreateAndUpdateRepository extends CrudRepository<LogCreateAndUpdate, Long> {
 
 	@Transactional
-	@Modifying 
-	@Query(value = "update log_create_and_update set date_of_update = :date where id_people = :id", nativeQuery = true)
+	@Modifying
+	@Query(value = "update log_create_and_update set date_of_update = :date where id_person = :id", nativeQuery = true)
 	void update(@Param("id") Long id, @Param("date") Date date);
 
 }

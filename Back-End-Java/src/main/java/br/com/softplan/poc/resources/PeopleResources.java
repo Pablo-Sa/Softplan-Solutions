@@ -56,14 +56,14 @@ public class PeopleResources {
 	@ApiOperation(value = "Salva uma Pessoa")
 	@PostMapping(path = "/people")
 	public ResponseEntity<People> savePeople(@RequestBody @Valid People people) {
-		People newPeople = peopleService.save(people);
+		People newPerson = peopleService.save(people);
 
-		LogCreateAndUpdate logCreatePeople = new LogCreateAndUpdate(newPeople.getId(),
-				new Date(System.currentTimeMillis()), null);
+		LogCreateAndUpdate logCreatePeople = new LogCreateAndUpdate(newPerson.getId(), newPerson.getName(),
+				new Date(System.currentTimeMillis()), null,null);
 
 		logCreateAndUpdateService.save(logCreatePeople);
 
-		return new ResponseEntity<People>(newPeople, HttpStatus.OK);
+		return new ResponseEntity<People>(newPerson, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Atualiza um Registro")
@@ -74,9 +74,6 @@ public class PeopleResources {
 		if (dto.isPresent()) {
 
 			People updatedPerson = peopleService.save(people);
-			
-			System.out.println(people.getId());
-			System.out.println(updatedPerson.getId());
 
 			logCreateAndUpdateService.update(updatedPerson.getId(), new Date(System.currentTimeMillis()));
 

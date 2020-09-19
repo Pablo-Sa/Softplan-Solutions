@@ -30,7 +30,7 @@ export class PeopleService {
   }
 
   put(people: PeopleInterface): Observable<PeopleInterface> {
-    return this.http.post<PeopleInterface>(this.serverAPI, people);
+    return this.http.put<PeopleInterface>(this.serverAPI, people);
   }
 
   getLogs(): Observable<LogPeopleInterface[]> {

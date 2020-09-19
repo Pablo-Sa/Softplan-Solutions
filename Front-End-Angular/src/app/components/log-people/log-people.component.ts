@@ -25,7 +25,8 @@ export class LogPeopleComponent implements OnInit {
     "idPerson",
     "namePerson",
     "dateOfCreate",
-    "dateOfUpdate"
+    "dateOfUpdate",
+    "dateOfExclusion"
   ];
 
   dataSource = new MatTableDataSource();

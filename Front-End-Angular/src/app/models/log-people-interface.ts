@@ -3,4 +3,5 @@ export interface LogPeopleInterface{
     namePerson: string;
     dateOfCreate: Date;
     dateOfUpdate: Date;
+    dateOfExclusion: Date;
 }

@@ -19,16 +19,20 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LogCreateAndUpdate extends AbstractEntity {
 	
-	private Long idPeople;
+	private Long idPerson;
+	private String namePerson;
 	private Date dateOfCreate;
 	private Date dateOfUpdate;
+	private Date dateOfExclusion;
 	
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this)
-			.append("idPeople", idPeople)
+			.append("idPeople", idPerson)
+			.append("idPeople", namePerson)
 			.append("dateOfCreate", dateOfCreate)
 			.append("dateOfUpdate", dateOfUpdate)
+			.append("dateOfExclusion", dateOfExclusion)
 			.toString();
 		}
 
