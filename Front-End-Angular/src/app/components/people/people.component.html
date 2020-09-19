@@ -1,1 +1,147 @@
-<p>people works!</p>
+<div style="padding-left: 20px; padding-right: 20px">
+  <mat-card class="example-card mat-elevation-z20">
+    <mat-card-header>
+      <div mat-card-avatar><mat-icon>supervisor_account</mat-icon></div>
+      <mat-card-title>Cadastro de Pessoas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-horizontal-stepper #stepper>
+        <mat-step
+          [stepControl]="firstFormGroup"
+          errorMessage="Dados Incompletos."
+        >
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Nome e Sexo</ng-template>
+
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>Nome</mat-label>
+              <input
+                matInput
+                placeholder="Informe o Nome"
+                formControlName="name"
+              />
+              <mat-hint>* Obrigatório</mat-hint>
+            </mat-form-field>
+
+            <br />
+
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>Sexo</mat-label>
+              <mat-select formControlName="sexo">
+                <mat-option *ngFor="let item of sexo" [value]="item">
+                  {{ item }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div>
+              <p>Informe os dados e clique em próximo</p>
+              <button mat-raised-button matStepperNext color="warn">
+                Próximo<mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step
+          [stepControl]="secondFormGroup"
+          errorMessage="Endereço Obrigatório"
+        >
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Dados Pessoais</ng-template>
+
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>E-mail</mat-label>
+              <input
+                matInput
+                placeholder="Informe seu E-mail"
+                formControlName="email"
+              />
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-hint>* Obrigatório</mat-hint>
+            </mat-form-field>
+
+            <br />
+
+            <div>
+              <mat-form-field appearance="outline" class="inputDate">
+                <mat-label>Data de Nascimento</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  placeholder="Informe sua Data de Nascimento"
+                  formControlName="dateOfBirth"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker
+                  #picker
+                  [calendarHeaderComponent]="datePicker"
+                ></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="inputDate">
+                <mat-label>Naturalidade</mat-label>
+                <input
+                  matInput
+                  placeholder="Informe sua Naturalidade"
+                  formControlName="naturalness"
+                />
+                <mat-hint>* Obrigatório</mat-hint>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field appearance="outline" class="inputCpf">
+                <mat-label>Informe sua Nacionalidade</mat-label>
+                <input
+                  matInput
+                  placeholder="Brasileiro"
+                  formControlName="nationality"
+                />
+                <mat-hint>* Obrigatório</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="inputCpf">
+                <mat-label>Informe seu CPF</mat-label>
+                <input
+                  matInput
+                  placeholder="xxx.xxx.xxx-xx"
+                  formControlName="cpf"
+                />
+                <mat-hint>* Obrigatório</mat-hint>
+              </mat-form-field>
+            </div>
+            <div>
+              <p>Informe os Dados.</p>
+              <button mat-raised-button matStepperPrevious color="warn">
+                <mat-icon>navigate_before</mat-icon>Voltar
+              </button>
+              <button mat-raised-button color="warn" matStepperNext>
+                Próximo<mat-icon>navigate_next</mat-icon>
+              </button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Finalizar</ng-template>
+          <p>Tem Certeza que deseja finalizar ?</p>
+          <div>
+            <button mat-raised-button matStepperPrevious color="warn">
+              <mat-icon>navigate_before</mat-icon>Voltar
+            </button>
+            <button
+              [disabled]="firstFormGroup.invalid || secondFormGroup.invalid"
+              mat-raised-button
+              color="warn"
+              (click)="savePerson(); stepper.reset()"
+            >
+              Concluir<mat-icon>check</mat-icon>
+            </button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+  </mat-card>
+</div>

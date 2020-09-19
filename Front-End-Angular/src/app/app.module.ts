@@ -29,9 +29,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PeopleComponent } from './components/people/people.component';
 import { SearchPeopleComponent } from './components/search-people/search-people.component';
 import { LogPeopleComponent } from './components/log-people/log-people.component';
+import { DatePickerPeopleComponent } from './components/date-picker-people/date-picker-people.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, FooterComponent, PeopleComponent, SearchPeopleComponent, LogPeopleComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, FooterComponent, PeopleComponent, SearchPeopleComponent, LogPeopleComponent, DatePickerPeopleComponent],
   imports: [
     BrowserModule,
     MaterialModule,
@@ -57,6 +58,7 @@ import { LogPeopleComponent } from './components/log-people/log-people.component
     ShowHideStyleBuilder,
     FlexOrderStyleBuilder,
   ],
+  entryComponents:[DatePickerPeopleComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
