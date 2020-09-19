@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -7,8 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'people', component: PeopleComponent },
+  { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
+  { path: 'people', component: PeopleComponent,canActivate:[AuthGuard] },
 ];
 
 @NgModule({
