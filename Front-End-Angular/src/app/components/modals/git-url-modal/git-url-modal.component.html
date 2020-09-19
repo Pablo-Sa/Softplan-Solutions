@@ -1,0 +1,29 @@
+<!-- <img src="../../../../assets/images/git.png" alt="Girl in a jacket" width="500" height="180"> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Pablo Vinícius</mat-card-title>
+    <mat-card-subtitle>POC Softplan</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="../../../../assets/images/git.png"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <p>
+      Clique no Botão Git-Hub e será redirecionado para o repositório deste
+      projeto no Git-Hub, Caso queira conhecer mais alguns projetos meus, clique
+      no botão saiba mais.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="redirectGit()">
+      Git-Hub
+    </button>
+    <button mat-raised-button color="warn" (click)="redirectMyPortfolio()">
+      Saiba Mais
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -4,6 +4,9 @@
     </h1>
   
     <div style="margin-left: 90px">
+
+      <button mat-button routerLink="home">Home</button>
+
       <button mat-button [matMenuTriggerFor]="cadastro">Cadastro</button>
       <mat-menu #cadastro="matMenu" yPosition="above">
         <button mat-menu-item routerLink="people">
@@ -24,6 +27,14 @@
           <mat-icon>policy</mat-icon>Histórico de Inclusão e Alteração
         </button>
       </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="git">Consulta GitHub</button>
+      <mat-menu #git="matMenu" xPosition="before">
+        <button (click)="openModal()"  mat-menu-item>
+          <mat-icon>send</mat-icon>Url Deste Projeto no GitHub
+        </button>
+      </mat-menu>
+
     </div>
 </mat-toolbar>
   

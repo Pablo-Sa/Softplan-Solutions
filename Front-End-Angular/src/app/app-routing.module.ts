@@ -1,3 +1,4 @@
+import { LogPeopleComponent } from './components/log-people/log-people.component';
 import { SearchPeopleComponent } from './components/search-people/search-people.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PeopleComponent } from './components/people/people.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
   { path: 'people', component: PeopleComponent,canActivate:[AuthGuard] },
   { path: 'searchpeople', component: SearchPeopleComponent,canActivate:[AuthGuard] },
+  { path: 'logpeople', component: LogPeopleComponent,canActivate:[AuthGuard] }
 ];
 
 @NgModule({

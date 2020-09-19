@@ -32,6 +32,7 @@ import { LogPeopleComponent } from "./components/log-people/log-people.component
 import { DatePickerPeopleComponent } from "./components/date-picker-people/date-picker-people.component";
 import { EditModalPeopleComponent } from "./components/modals/edit-modal-people/edit-modal-people.component";
 import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-modal-people/exclusion-modal-people.component";
+import { GitUrlModalComponent } from "./components/modals/git-url-modal/git-url-modal.component";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-mod
     DatePickerPeopleComponent,
     EditModalPeopleComponent,
     ExclusionModalPeopleComponent,
+    GitUrlModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-mod
     DatePickerPeopleComponent,
     ExclusionModalPeopleComponent,
     EditModalPeopleComponent,
+    GitUrlModalComponent,
   ],
   bootstrap: [AppComponent],
 })

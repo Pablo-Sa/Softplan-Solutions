@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         this.loginService.showMenuEmitter.next(true);
         this.openSnackBar(
           `Seja Bem Vindo ${this.form.controls["login"].value}`
-        );
+        );  
         this.router.navigate(["/home"]);
       },
       (error) => {
