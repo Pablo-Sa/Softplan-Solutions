@@ -26,30 +26,30 @@ export class PeopleComponent implements OnInit {
 
   sexo: string[] = ['Masculino','Feminino'];
 
-  constructor(private _formBuilder: FormBuilder,
-              private _snackBar: MatSnackBar,
+  constructor(private formBuilder: FormBuilder,
+              private snackBar: MatSnackBar,
               private peopleServiceService: PeopleServiceService,
               private router: Router) { }
 
   openSnackBar(message: string,) {
-    this._snackBar.open(message, 'Ok',{
-      duration: 2000,
+    this.snackBar.open(message, 'Ok',{
+      duration: 4000,
       verticalPosition:'top'
     });
   }              
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      name: ['', Validators.required],
-      sexo: ['', Validators.required]
+    this.firstFormGroup = this.formBuilder.group({
+      name: [''],
+      sexo: ['']
     });
 
-    this.secondFormGroup = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      dateOfBirth: ['', Validators.required],
-      naturalness: ['', Validators.required],
-      nationality: ['', Validators.required],
-      cpf: ['', Validators.required]
+    this.secondFormGroup = this.formBuilder.group({
+      email: [''],
+      dateOfBirth: [''],
+      naturalness: [''],
+      nationality: [''],
+      cpf: ['']
     });
   }
 
@@ -76,7 +76,7 @@ export class PeopleComponent implements OnInit {
         }
 
         if(error.status == 400){
-          this.openSnackBar(`Error: ${error.error[0].error}`);
+          this.openSnackBar(`Error: ${error.error[0].field}: ${error.error[0].error}`);
         }
       }
       );
