@@ -1,0 +1,29 @@
+<mat-toolbar color="warn" class="mat-elevation-z15">
+    <h1>
+      <strong>Softplan</strong>
+    </h1>
+  
+    <div style="margin-left: 90px">
+      <button mat-button [matMenuTriggerFor]="cadastro">Cadastro</button>
+      <mat-menu #cadastro="matMenu" yPosition="above">
+        <button mat-menu-item routerLink="people">
+          <mat-icon>supervisor_account</mat-icon>Pessoas
+        </button>
+      </mat-menu>
+  
+      <button mat-button [matMenuTriggerFor]="consulta">Consultas</button>
+      <mat-menu #consulta="matMenu" yPosition="above">
+        <button mat-menu-item routerLink="searchpeople">
+          <mat-icon>supervisor_account</mat-icon>Pessoas
+        </button>
+      </mat-menu>
+  
+      <button mat-button [matMenuTriggerFor]="logs">Logs</button>
+      <mat-menu #logs="matMenu" xPosition="before">
+        <button routerLink="logpeople" mat-menu-item>
+          <mat-icon>policy</mat-icon>Histórico de Inclusão e Alteração
+        </button>
+      </mat-menu>
+    </div>
+</mat-toolbar>
+  

@@ -30,13 +30,11 @@
             placeholder="Informe a Senha"
             formControlName="password"
             required
+            type="password"
           />
           <mat-hint>* Obrigatório</mat-hint>
         </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button
+        <button
         mat-raised-button
         color="primary"
         (click)="onSubmit()" 
@@ -44,6 +42,8 @@
       >
         LOGIN
       </button>
-    </mat-card-actions>
+
+      </form>
+    </mat-card-content>
   </mat-card>
 </div>

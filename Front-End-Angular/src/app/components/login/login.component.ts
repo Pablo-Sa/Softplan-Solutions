@@ -12,29 +12,28 @@ import { MatSnackBar } from "@angular/material/snack-bar";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
-  public isError: boolean;
   public form: FormGroup;
   private authToken: string;
 
   constructor(
     private loginService: LoginService,
     private tokenService: TokenService,
-    private _formBuilder: FormBuilder,
-    private _snackBar: MatSnackBar,
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
     private router: Router
   ) {}
 
   ngOnInit() {
     this.tokenService.removeToken();
     this.loginService.unAuthenticatedUser(true);
-    this.form = this._formBuilder.group({
+    this.form = this.formBuilder.group({
       login: ["", Validators.required],
       password: ["", Validators.required],
     });
   }
 
   openSnackBar(message: string) {
-    this._snackBar.open(message, "Ok", {
+    this.snackBar.open(message, "Ok", {
       duration: 2000,
       verticalPosition: "top",
     });
@@ -54,7 +53,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/home"]);
       },
       (error) => {
-        this.tokenService.removeToken();
         console.log(error);
         this.loginService.showMenuEmitter.next(false);
         this.openSnackBar("Credênciais Inválidas");
