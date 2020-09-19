@@ -1,4 +1,4 @@
-import { TokenService } from './token.service';
+import { TokenService } from '../services/token.service';
 import { Observable } from 'rxjs';
 import { Injectable, NgModule } from '@angular/core';
 import {

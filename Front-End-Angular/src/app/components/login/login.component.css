@@ -1,0 +1,26 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/images/pablo_canditato.jpg');
+  background-size: cover;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+
+.input {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
