@@ -7,6 +7,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.br.CPF;
 
 import lombok.Getter;
@@ -31,5 +32,18 @@ public class People extends AbstractEntity {
 	@NotEmpty
 	@CPF
 	private String cpf;
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this)
+			.append("nome", name)
+			.append("sexo", sexo)
+			.append("email", email)
+			.append("dateOfBirth", dateOfBirth)
+			.append("naturalness", naturalness)
+			.append("nationality", nationality)
+			.append("cpf", cpf)
+			.toString();
+		}
 
 }
