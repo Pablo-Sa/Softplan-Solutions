@@ -59,7 +59,7 @@ public class PeopleResources {
 		People newPerson = peopleService.save(people);
 
 		LogCreateAndUpdate logCreatePeople = new LogCreateAndUpdate(newPerson.getId(), newPerson.getName(),
-				new Date(System.currentTimeMillis()), null,null);
+				new Date(System.currentTimeMillis()), null, null);
 
 		logCreateAndUpdateService.save(logCreatePeople);
 
@@ -75,7 +75,7 @@ public class PeopleResources {
 
 			People updatedPerson = peopleService.save(people);
 
-			logCreateAndUpdateService.update(updatedPerson.getId(), new Date(System.currentTimeMillis()));
+			logCreateAndUpdateService.saveLogChange(updatedPerson.getId(), new Date(System.currentTimeMillis()));
 
 			return new ResponseEntity<People>(updatedPerson, HttpStatus.OK);
 		}
@@ -102,6 +102,8 @@ public class PeopleResources {
 		Optional<People> people = (Optional<People>) peopleService.findById(id);
 
 		if (people.isPresent()) {
+
+			logCreateAndUpdateService.saveLogDelete(id, new Date(System.currentTimeMillis()));
 			return new ResponseEntity<>(peopleService.deleteById(id), HttpStatus.OK);
 		}
 

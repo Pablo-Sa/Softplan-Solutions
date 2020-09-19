@@ -22,7 +22,11 @@ public class LogCreateAndUpdateService {
         return logCreateAndUpdateRepository.findAll();
 	}
 	
-	public void update(Long id, Date date) {
-        logCreateAndUpdateRepository.update(id, date);
+	public void saveLogChange(Long id, Date date) {
+        logCreateAndUpdateRepository.saveLogChange(id, date);
+	}
+	
+	public void saveLogDelete(Long id, Date date) {
+        logCreateAndUpdateRepository.saveLogDelete(id, date);
 	}
 }

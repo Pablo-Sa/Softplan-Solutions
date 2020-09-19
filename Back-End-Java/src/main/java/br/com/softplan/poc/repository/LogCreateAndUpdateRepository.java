@@ -17,6 +17,11 @@ public interface LogCreateAndUpdateRepository extends CrudRepository<LogCreateAn
 	@Transactional
 	@Modifying
 	@Query(value = "update log_create_and_update set date_of_update = :date where id_person = :id", nativeQuery = true)
-	void update(@Param("id") Long id, @Param("date") Date date);
+	void saveLogChange(@Param("id") Long id, @Param("date") Date date);
+
+	@Transactional
+	@Modifying
+	@Query(value = "update log_create_and_update set date_of_exclusion = :date where id_person = :id", nativeQuery = true)
+	void saveLogDelete(@Param("id") Long id, @Param("date") Date date);
 
 }
