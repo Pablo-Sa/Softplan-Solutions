@@ -14,8 +14,14 @@
         </mat-card-header>
 
         <mat-card-content>
-            <div *ngFor="let item of messageList">
-              {{ item.user }} Disse: {{ item.body }}
+            <div class="row message-body" style="display: block">
+              <div class="col-sm-12 message-main-sender" style="display: block">
+                <div class="sender" style="display: block; margin-bottom: 10px;" *ngFor="let item of messageList">
+                  <div class="message-text" style="display: block">
+                    <label  class="receiver-time"> {{today |  date: "HH:mm:ss" }}</label> {{ item.user }} Disse: {{ item.body }}
+                  </div>
+                </div>
+              </div>
             </div>
         </mat-card-content>
       </mat-card>
