@@ -35,6 +35,8 @@ import { EditModalPeopleComponent } from "./components/modals/edit-modal-people/
 import { ExclusionModalPeopleComponent } from "./components/modals/exclusion-modal-people/exclusion-modal-people.component";
 import { GitUrlModalComponent } from "./components/modals/git-url-modal/git-url-modal.component";
 import { registerLocaleData } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChatModalComponent } from './components/modals/chat-modal/chat-modal.component';
 
 @NgModule({
   declarations: [
@@ -50,9 +52,11 @@ import { registerLocaleData } from '@angular/common';
     EditModalPeopleComponent,
     ExclusionModalPeopleComponent,
     GitUrlModalComponent,
+    ChatModalComponent
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -82,6 +86,7 @@ import { registerLocaleData } from '@angular/common';
     ExclusionModalPeopleComponent,
     EditModalPeopleComponent,
     GitUrlModalComponent,
+    ChatModalComponent
   ],
   bootstrap: [AppComponent],
 })

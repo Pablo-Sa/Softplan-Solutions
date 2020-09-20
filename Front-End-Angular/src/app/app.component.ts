@@ -1,5 +1,3 @@
-import { MessageChatInterface } from './models/message-chat-model';
-import { ChatService } from "./services/chat.service";
 import { Component } from "@angular/core";
 import { LoginService } from "./services/login.service";
 
@@ -11,23 +9,13 @@ import { LoginService } from "./services/login.service";
 export class AppComponent {
   title = "softPlanFront";
 
-  userOfMessage: string;
-  messageList:Array<MessageChatInterface> = [];
   showHeader: boolean = false;
 
-  constructor(private loginService: LoginService, private chatService: ChatService) {
-    this.chatService.getMesg().subscribe(data =>{
-      this.messageList.push(data)
-    })
-  }
+  constructor(private loginService: LoginService) {}
 
   ngOnInit() {
     this.loginService.showMenuEmitter.subscribe(
       (response) => (this.showHeader = response)
     );
-  }
-
-  sendMessage(message:MessageChatInterface) {
-    this.chatService.sendMsg(message);
   }
 }

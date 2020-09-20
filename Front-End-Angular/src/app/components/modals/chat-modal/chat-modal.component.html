@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>Chat Em Grupo</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Grupo POC Softplan</mat-card-title>
+      <mat-card-subtitle
+        >Abra está aplicação em outro navegador.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card class="example-card" style="margin-bottom: 30px;">
+        <mat-card-header>
+          <mat-card-title>Quadro de Mensagens</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div *ngFor="let item of messageList">
+              {{ item.user }} Disse: {{ item.body }}
+            </div>
+        </mat-card-content>
+      </mat-card>
+
+    <mat-card-content>
+      <div>
+        <mat-form-field appearance="outline" class="inputNome">
+          <mat-label>Informe seu Nome no Chat</mat-label>
+          <input
+            matInput
+            [(ngModel)]="message.user"
+            placeholder="Ex: Maria Antônia"
+          />
+          <mat-hint>* Obrigatório</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="inputNome">
+          <mat-label>Digite sua Mensagem</mat-label>
+          <input
+            matInput
+            [(ngModel)]="message.body"
+            placeholder="Ex: Oi Tudo Bem?"
+          />
+          <mat-hint>* Obrigatório</mat-hint>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" mat-dialog-close>Fechar</button>
+  <button
+    mat-raised-button
+    color="warn"
+    [disabled]="!!!message.user || !!!message.body"
+    (click)="sendMessage(message)"
+  >
+    Enviar Mensagem
+  </button>
+</mat-dialog-actions>
