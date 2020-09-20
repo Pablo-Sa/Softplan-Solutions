@@ -18,4 +18,5 @@ export class AppComponent {
       (response) => (this.showHeader = response)
     );
   }
+  
 }

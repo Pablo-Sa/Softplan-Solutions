@@ -1,35 +1,48 @@
+import { WebSocketAPI } from './../../../shared/WebSocketAPI';
 import { MessageModel } from './../../../models/message-model';
 import { MessageChatInterface } from "./../../../models/message-chat-model";
-import { ChatService } from "./../../../services/chat.service";
 import { Component, DoCheck, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-chat-modal",
   templateUrl: "./chat-modal.component.html",
   styleUrls: ["./chat-modal.component.css"],
+  preserveWhitespaces: true
 })
 export class ChatModalComponent implements OnInit, DoCheck {
   messageList: Array<MessageChatInterface> = [];
   message:MessageModel;
+  disabledButtonConnect:boolean = false;
 
-  constructor(private chatService: ChatService) {
+  constructor(private webSocketAPI: WebSocketAPI) {
     this.message = new MessageModel();
     this.message.date = Date.now();
-    this.chatService.getMesg().subscribe((data) => {
-      console.log('Mensagem Recebida')
-      console.log(data)
-      this.messageList.push(data);
-    });
   }
 
-  sendMessage(message: MessageModel) {
-    console.log(message)
-    this.chatService.sendMsg(message);
+  ngOnInit() {
+    this.webSocketAPI.newMessageChat.subscribe((data) =>{
+      this.messageList.push(data.message);
+    })
   }
-
-  ngOnInit() {}
 
   ngDoCheck(){
     this.message.date = Date.now();
   }
+
+  connect(){
+    this.webSocketAPI._connect();
+  }
+
+  disconnect(){
+    this.webSocketAPI._disconnect();
+  }
+
+  sendMessage(){
+    this.webSocketAPI._send(this.message);
+  }
+
+  disabledButtonConnectionChat(){
+    this.disabledButtonConnect = !this.disabledButtonConnect;
+  }
+
 }

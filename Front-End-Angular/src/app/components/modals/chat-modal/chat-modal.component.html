@@ -33,7 +33,7 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card-content >
+    <mat-card-content>
       <div>
         <mat-form-field appearance="outline" class="inputNome">
           <mat-label>Informe seu Nome no Chat</mat-label>
@@ -41,9 +41,27 @@
             matInput
             [(ngModel)]="message.user"
             placeholder="Ex: Maria Antônia"
+            [disabled]="disabledButtonConnect"
           />
           <mat-hint>* Obrigatório</mat-hint>
         </mat-form-field>
+        <button
+          mat-raised-button
+          color="warn"
+          [disabled]="disabledButtonConnect"
+          (click)="disabledButtonConnectionChat(); connect()"
+        >
+          Conectar
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn"
+          [disabled]="!disabledButtonConnect"
+          (click)="disabledButtonConnectionChat(); disconnect()"
+        >
+          Editar Nome
+        </button>
 
         <mat-form-field appearance="outline" class="inputNome">
           <mat-label>Digite sua Mensagem</mat-label>
