@@ -11,23 +11,25 @@ import { Component, DoCheck, OnInit } from "@angular/core";
 export class ChatModalComponent implements OnInit, DoCheck {
   messageList: Array<MessageChatInterface> = [];
   message:MessageModel;
-  today: number = Date.now();
-
 
   constructor(private chatService: ChatService) {
     this.message = new MessageModel();
+    this.message.date = Date.now();
     this.chatService.getMesg().subscribe((data) => {
+      console.log('Mensagem Recebida')
+      console.log(data)
       this.messageList.push(data);
     });
   }
 
-  sendMessage(message: MessageChatInterface) {
+  sendMessage(message: MessageModel) {
+    console.log(message)
     this.chatService.sendMsg(message);
   }
 
   ngOnInit() {}
 
   ngDoCheck(){
-    this.today = Date.now();
+    this.message.date = Date.now();
   }
 }

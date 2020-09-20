@@ -1,3 +1,4 @@
+import { MessageModel } from './../models/message-model';
 import { MessageChatInterface } from './../models/message-chat-model';
 import { Observable } from 'rxjs';
 import { Injectable } from "@angular/core";
@@ -10,13 +11,13 @@ export class ChatService {
   
   private socket = io('http://localhost:3000');
 
-  sendMsg(msg:MessageChatInterface) {
+  sendMsg(msg:MessageModel) {
     this.socket.emit('new-message', msg);
   }
 
   getMesg(){
-    let observable = new Observable<MessageChatInterface>(observer =>{
-      this.socket.on('new-message', (data)=>{
+    let observable = new Observable<MessageModel>(observer =>{
+      this.socket.on('new-message', (data:MessageModel)=>{
         observer.next(data);
       });
         return () => {this.socket.disconnect();}
