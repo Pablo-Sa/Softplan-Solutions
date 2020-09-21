@@ -1,0 +1,10 @@
+Olá Tudo bem Pessoal, Seguinte, criei este arquivo 
+somente para que não seja necessário acessar o site do 
+Docker e também a imagem necessita de vários parâmetros,
+de variáveis de ambiente, como o nome do banco etc, logo o comando 
+docker iria ficar gigante, porém somente na raiz deste arquivo 
+pode ser executado no terminal o comando "docker-compose up", tudo será feito
+de forma automática e logo a aplicação estará executando,
+e não necessita dos fontes, as imagens serão baixadas
+do DOCKER HUB, o docker compose só está realizando um papel de orquestrador
+dos containers.

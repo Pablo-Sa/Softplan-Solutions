@@ -1,0 +1,39 @@
+version: '3.5'
+
+services:
+  backendjava-poc-softplan:
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/softplan
+    image: pablosa/backendjava:latest
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "softplan"
+    ports:
+      - "5432:5432"
+  pgadmin-poc-softplan:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "pablov.pereira12@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "Mudar@123"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+  front-end-angular-poc-softplan:
+    image: pablosa/front-end-angular_front-end-poc-softplan-pablo:latest
+    ports: 
+      - '4200:4200'
+    depends_on:
+      - backendjava-poc-softplan
+    command: > 
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+      
+  
