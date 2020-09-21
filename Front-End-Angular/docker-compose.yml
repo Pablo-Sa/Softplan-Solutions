@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  softplanfront:
+    image: softplanfront
+    build: .
+    ports:
+      - 8081:80
