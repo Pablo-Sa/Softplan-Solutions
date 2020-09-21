@@ -38,6 +38,7 @@ import { registerLocaleData } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChatModalComponent } from './components/modals/chat-modal/chat-modal.component';
 import { ExplanatoryVideoOfProjectModalComponent } from './components/modals/explanatory-video-of-project-modal/explanatory-video-of-project-modal.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ExplanatoryVideoOfProjectModalComponent } from './components/modals/exp
     ExclusionModalPeopleComponent,
     GitUrlModalComponent,
     ChatModalComponent,
-    ExplanatoryVideoOfProjectModalComponent
+    ExplanatoryVideoOfProjectModalComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
