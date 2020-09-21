@@ -4,14 +4,9 @@ import java.util.Date;
 import java.util.Optional;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.softplan.poc.config.beancustomvalidators.CpfAlreadyExists;
 import br.com.softplan.poc.entity.LogCreateAndUpdate;
 import br.com.softplan.poc.entity.People;
 import br.com.softplan.poc.service.LogCreateAndUpdateService;
@@ -60,7 +54,12 @@ public class PeopleResources {
 
 	@ApiOperation(value = "Salva uma Pessoa")
 	@PostMapping(path = "/people")
-	public ResponseEntity<?> savePeople(@Validated(People.PeopleCreation.class) @RequestBody @Valid People people) {
+	public ResponseEntity<?> savePeople(@RequestBody @Valid People people) {
+
+		Optional<People> person = (Optional<People>) peopleService.findByCpf(people.getCpf());
+		if (person.isPresent()) {
+			return new ResponseEntity("Este CPF já Está Cadastrado na Base de Dados", HttpStatus.BAD_REQUEST);
+		}
 
 		People newPerson = peopleService.save(people);
 

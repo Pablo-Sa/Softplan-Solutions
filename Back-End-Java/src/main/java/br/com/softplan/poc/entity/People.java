@@ -21,32 +21,24 @@ import lombok.Setter;
 @NoArgsConstructor
 public class People extends AbstractEntity {
 
-	public interface PeopleCreation {}
-
 	@NotEmpty
 	private String name;
 	private String sexo;
-	@Email
+	@Email(message = "Formato do E-mail Inválido")
 	private String email;
 	@NotNull
 	private Date dateOfBirth;
 	private String naturalness;
 	private String nationality;
-	@CpfAlreadyExists(groups = { PeopleCreation.class }, message = "Não Foi Possível Realizar o Cadastro, Este CPF já existe na Base de Dados")
+//	@CpfAlreadyExists(message = "Este CPF Já Existe na Base de Dados")
 	@NotEmpty
 	@CPF
 	private String cpf;
 
 	@Override
 	public String toString() {
-		return new ToStringBuilder(this)
-				.append("nome", name)
-				.append("sexo", sexo)
-				.append("email", email)
-				.append("dateOfBirth", dateOfBirth)
-				.append("naturalness", naturalness)
-				.append("nationality", nationality)
-				.append("cpf", cpf).toString();
+		return new ToStringBuilder(this).append("name", name).append("sexo", sexo).append("email", email)
+				.append("dateOfBirth", dateOfBirth).append("naturalness", naturalness)
+				.append("nationality", nationality).append("cpf", cpf).toString();
 	}
-
 }

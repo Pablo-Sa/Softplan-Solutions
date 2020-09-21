@@ -8,9 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.google.common.base.Strings;
 
-import br.com.softplan.poc.entity.LogCreateAndUpdate;
 import br.com.softplan.poc.entity.People;
-import br.com.softplan.poc.service.LogCreateAndUpdateService;
 import br.com.softplan.poc.service.PeopleService;
 
 public class CpfNotExistsValidator implements ConstraintValidator<CpfAlreadyExists, String> {

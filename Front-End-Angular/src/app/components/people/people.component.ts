@@ -76,7 +76,11 @@ export class PeopleComponent implements OnInit {
         }
 
         if(error.status == 400){
-          this.openSnackBar(`Error: ${error.error[0].field}: ${error.error[0].error}`);
+          if(error.error[0].field){
+            this.openSnackBar(`Error: ${error.error[0].field}: ${error.error[0].error}`);
+          }else{
+            this.openSnackBar(`Error: ${error.error}`)
+          }
         }
       }
       );

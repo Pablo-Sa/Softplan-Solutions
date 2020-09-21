@@ -1,11 +1,6 @@
-FROM node:latest as angular
-WORKDIR /app
-COPY package.json /app
-RUN npm install --silent
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-VOLUME /var/cache/nginx
-COPY --from=angular app/dist/softPlanFront /usr/share/nginx/html
-COPY ./config/nginx.conf /etc/ngix/conf.d/default.conf
+FROM node:latest
+RUN mkdir /usr/src/app 
+ 
+WORKDIR /usr/src/app
+RUN npm install -g @angular/cli 
+COPY . . 
