@@ -1,0 +1,8 @@
+.example-card {
+    max-width: 640px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../assets/images/pablo_canditato.jpg');
+    background-size: cover;
+  }

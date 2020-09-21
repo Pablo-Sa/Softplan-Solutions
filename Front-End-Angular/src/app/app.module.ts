@@ -37,6 +37,7 @@ import { GitUrlModalComponent } from "./components/modals/git-url-modal/git-url-
 import { registerLocaleData } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChatModalComponent } from './components/modals/chat-modal/chat-modal.component';
+import { ExplanatoryVideoOfProjectModalComponent } from './components/modals/explanatory-video-of-project-modal/explanatory-video-of-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ChatModalComponent } from './components/modals/chat-modal/chat-modal.co
     EditModalPeopleComponent,
     ExclusionModalPeopleComponent,
     GitUrlModalComponent,
-    ChatModalComponent
+    ChatModalComponent,
+    ExplanatoryVideoOfProjectModalComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,8 @@ import { ChatModalComponent } from './components/modals/chat-modal/chat-modal.co
     ExclusionModalPeopleComponent,
     EditModalPeopleComponent,
     GitUrlModalComponent,
-    ChatModalComponent
+    ChatModalComponent,
+    ExplanatoryVideoOfProjectModalComponent
   ],
   bootstrap: [AppComponent],
 })
