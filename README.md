@@ -3,6 +3,10 @@
 ## OBS: Realizei o Deploy dos fontes desatualizados no Heroku e Firebase.
 # Fontes Atualizados com sucesso no Heroku e no Firebase.
 
+## Credênciais de Acesso
+ - Usuário: Pablo  
+ - Senha: Mudar@123
+
 ### Link direto para a Aplicação: http://www.ondeployment.com.br/softplan/
 
 # BACK-END
