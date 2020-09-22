@@ -24,6 +24,9 @@ Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou 
    
 OBS: Foi configurado para a aplicação executar um arquivo .sql que se encontra na pasta src/main/resources/db/postgres/ para inserção do usuário no banco de dados.
 
+# Firebase Hosting(Somente Front-End)
+* Realizei o Deploy do Front-End no Firebase Hosting.
+
 ## Executando e testando o projeto (Back-End)
 
 ### Pré-requisitos
