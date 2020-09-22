@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.br.CPF;
 
-import br.com.softplan.poc.config.beancustomvalidators.CpfAlreadyExists;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
