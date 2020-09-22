@@ -96,5 +96,14 @@ O Tempo de Expiração do Token configurei para 30 Minutos para que seja possív
 A senha ao Efetuar login, no Banco de Dados foi cadastrada utilizando o BCrypt (é um método de criptografia do tipo hash para senhas baseado no Blowfish).
 Logo no DB ficaria a Senha Criptografada e ao usuário fazer login no Recurso disponibilizado pela API, será digitado a senha sem Criptografia.
 
+# Bean Validation
+Utilizado o mesmo para validações na Entidade People.
+
+# Lombok
+Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
+
+
+
+
 # Front-End
 
