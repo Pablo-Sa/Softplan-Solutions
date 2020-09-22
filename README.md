@@ -21,6 +21,8 @@ Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou 
     * https://back-and-softplan-poc.herokuapp.com/swagger-ui.html  
     
    OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação está disponível e com funcionamente similar a uma em produção.
+   
+OBS: Foi configurado para a aplicação executar um arquivo .sql que se encontra na pasta src/main/resources/db/postgres/ para inserção do usuário no banco de dados.
 
 ## Executando e testando o projeto (Back-End)
 
@@ -100,6 +102,9 @@ Logo no DB ficaria a Senha Criptografada e ao usuário fazer login no Recurso di
 Utilizado o mesmo para validações na Entidade People.
 
 # Lombok
+Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
+
+# Inicialização de arquivo .sql ao iniciar a aplicação.
 Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
 
 
