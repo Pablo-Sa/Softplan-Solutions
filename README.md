@@ -94,6 +94,21 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 - Lombook
 - Bean Validation
 
+## Design Patterns Envolvidos
+
+### Factory
+Foi Utilizado o Pattern Factory, afim de otimizar algumas funcionalidades, o conceito que este Pattern traz consigo em síntese é lhe servir de forma automatizada uma
+instância de um Objeto, simples porém muito útil, foi utilizado afim de isolar alguns recursos e auxiliar nas estratégias de regra de negócio.
+
+### WebSocket
+Utilizado o SocketJS afim de implementar o Padrão WebSocket, padrão utilizado em grandes projetos como Twitter, Whatsapp e vários outros.
+O conceito que o WebSocket traz é oriundo de trocas de mensagens em dupla direção, Cliente e Server o Front-End e Back-End, como queira adotar,
+diferentemente dos verbos HTTP, como: GET onde se é necessário realizar tal requisição ao Server afim de obter alguma mensagem e após a obtenção
+da mesma a conexão é encerrada, no WebSocket o próprio Server já lhe envia tal através do mesmo que utiliza o protocolo TCP para se comunicar
+logo existe uma comunicação bidirecional e o mais importante a conexão uma vez feita não é encerrada, é criado um "tunel" onde as informações são 
+trafegadas, desta forma o fluxo de informações fica o mais próximo possível do tempo real.  A capacidade bidirecional é tão boa que se pode tunelar
+um protocolo TCP de tempo real, como Remote Desktop ou VNC, sobre um WebSocket.
+
 ## Spring Security
 Para Segurança da API foi implementado o Spring Security como método de Autenticação `STATELESS`, utilizado o JWT.
 O Tempo de Expiração do Token configurei para 30 Minutos para que seja possível o teste mais facilmente por se tratar de uma POC.
