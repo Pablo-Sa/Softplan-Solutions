@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'https://back-and-softplan-poc.herokuapp.com'
+  API: 'http://localhost:8080'
 };
 
 /*

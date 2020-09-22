@@ -13,10 +13,14 @@ export class WebSocketAPI {
   stompClient: any;
   public newMessageChat = new Subject<MessageReceivedInterface>();
 
-  constructor() {}
+  constructor() {
+    console.log('Endereço do WebSocket')
+    console.log(this.webSocketEndPoint)
+  }
 
   _connect() {
     console.log("Initialize WebSocket Connection");
+    console.log(this.webSocketEndPoint)
     let ws = new SockJS(this.webSocketEndPoint);
     this.stompClient = Stomp.over(ws);
     const _this = this;

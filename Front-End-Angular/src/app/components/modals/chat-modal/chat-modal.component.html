@@ -81,7 +81,7 @@
   <button
     mat-raised-button
     color="warn"
-    [disabled]="!!!message.user || !!!message.body"
+    [disabled]="!!!message.user || !!!message.body || !disabledButtonConnect"
     (click)="sendMessage(message)"
   >
     Enviar Mensagem
