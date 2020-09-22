@@ -94,19 +94,25 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 - Lombook
 - Bean Validation
 
-# Spring Security
+## Spring Security
 Para Segurança da API foi implementado o Spring Security como método de Autenticação `STATELESS`, utilizado o JWT.
 O Tempo de Expiração do Token configurei para 30 Minutos para que seja possível o teste mais facilmente por se tratar de uma POC.
 A senha ao Efetuar login, no Banco de Dados foi cadastrada utilizando o BCrypt (é um método de criptografia do tipo hash para senhas baseado no Blowfish).
 Logo no DB ficaria a Senha Criptografada e ao usuário fazer login no Recurso disponibilizado pela API, será digitado a senha sem Criptografia.
 
-# Bean Validation
+## Bean Validation
 Utilizado o mesmo para validações na Entidade People.
 
-# Lombok
+## Lombok
 Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
 
+# Front-End - Angular
+Foi utilizado o Framework Angular no Front-End.
 
+## Implementações no Front-End
 
-# Front-End
+- Vários Componentes do Angular Material como: Modal,Table, Paginator, DataPicket, Card dentre vários outros.
+- Guarda de Rotas
+- Interceptors, pois no Back-End a autenticação é via JWT.
+- WebSocket SockJS - Client.
 
