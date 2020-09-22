@@ -1,5 +1,7 @@
 # POC - Sistema Completo
 
+###OBS: Realizei o Deploy dos fontes desatualizados no Heroku e Firebase, o Heroku já está corrigido, estou atualizando os fontes no Firebase.
+
 ### Link direto para a Aplicação: http://www.ondeployment.com.br/softplan/
 
 # BACK-END
