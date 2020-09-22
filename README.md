@@ -1,6 +1,9 @@
 # POC - Sistema Completo
 
-### Link direto para a Aplicação: https://softplan-front-angular.web.app -> Deploy no Firebase. 
+## OBS: Realizei o Deploy dos fontes desatualizados no Heroku e Firebase.
+# Fontes Atualizados com sucesso no Heroku e no Firebase.
+
+### Link direto para a Aplicação: http://www.ondeployment.com.br/softplan/
 
 # BACK-END
 Implementado Spring Data, Mockito, JUnit, AssertJ, Swagger, Tratamento de Exceções etc.
@@ -23,6 +26,9 @@ Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou 
    OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação está disponível e com funcionamente similar a uma em produção.
    
 OBS: Foi configurado para a aplicação executar um arquivo .sql que se encontra na pasta src/main/resources/db/postgres/ para inserção do usuário no banco de dados.
+
+# Firebase Hosting(Somente Front-End)
+* Realizei o Deploy do Front-End no Firebase Hosting.
 
 ## Executando e testando o projeto (Back-End)
 
@@ -100,6 +106,9 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 Foi Utilizado o Pattern Factory, afim de otimizar algumas funcionalidades, o conceito que este Pattern traz consigo em síntese é lhe servir de forma automatizada uma
 instância de um Objeto, simples porém muito útil, foi utilizado afim de isolar alguns recursos e auxiliar nas estratégias de regra de negócio.
 
+## Observer
+Para não me estender muito na explicação deste Pattern recomendo caso tenha curiosidade ler este artigo da DevMedia https://www.devmedia.com.br/design-patterns-observer/16875.
+
 ### WebSocket
 Utilizado o SocketJS afim de implementar o Padrão WebSocket, padrão utilizado em grandes projetos como Twitter, Whatsapp e vários outros.
 O conceito que o WebSocket traz é oriundo de trocas de mensagens em dupla direção, Cliente e Server o Front-End e Back-End, como queira adotar,
@@ -130,4 +139,5 @@ Foi utilizado o Framework Angular no Front-End.
 - Guarda de Rotas
 - Interceptors, pois no Back-End a autenticação é via JWT.
 - WebSocket SockJS - Client.
+- Página Padrão em Caso de Rotas Nâo encontradas (Page Not Found).
 
