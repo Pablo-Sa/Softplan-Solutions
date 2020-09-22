@@ -100,6 +100,9 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 Foi Utilizado o Pattern Factory, afim de otimizar algumas funcionalidades, o conceito que este Pattern traz consigo em síntese é lhe servir de forma automatizada uma
 instância de um Objeto, simples porém muito útil, foi utilizado afim de isolar alguns recursos e auxiliar nas estratégias de regra de negócio.
 
+## Observer
+Para não me estender muito na explicação deste Pattern recomendo caso tenha curiosidade ler este artigo da DevMedia https://www.devmedia.com.br/design-patterns-observer/16875.
+
 ### WebSocket
 Utilizado o SocketJS afim de implementar o Padrão WebSocket, padrão utilizado em grandes projetos como Twitter, Whatsapp e vários outros.
 O conceito que o WebSocket traz é oriundo de trocas de mensagens em dupla direção, Cliente e Server o Front-End e Back-End, como queira adotar,
