@@ -30,7 +30,6 @@ public class People extends AbstractEntity {
 	private Date dateOfBirth;
 	private String naturalness;
 	private String nationality;
-//	@CpfAlreadyExists(message = "Este CPF Já Existe na Base de Dados")
 	@NotEmpty
 	@CPF
 	private String cpf;
