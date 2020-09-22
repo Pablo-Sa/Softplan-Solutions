@@ -76,7 +76,7 @@ Então basta entrar no diretório `target/` e executar:
 
 OBS: Caso apresente errro no comando acima tente informar todo o Diretório, então supondo que a pasta do projeto esteja em C:\
 Logo o Comando Será : 
-`$ java -jar "C:\pastadoprojeto\target\apirest-0.0.1-SNAPSHOT.jar"`
+`$ java -jar "C:\pastadoprojeto\target\softplan-0.0.1-SNAPSHOT.jar"`
 
 A partir deste ponto se tudo ocorrer corretamente a aplicação estará executando normalmente. 
 
@@ -84,13 +84,15 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 
 ## Principais tecnologias e frameworks utilizados (Back-End)
 
-- Java 8
-- Spring Boot 
+- Spring Boot
+- Spring Data 
+- Spring Security
 - JUnit 5
 - Mockito
 - Hibernate
 - Swagger
 - Lombook
+- Bean Validation
 
 # Spring Security
 Para Segurança da API foi implementado o Spring Security como método de Autenticação `STATELESS`, utilizado o JWT.
@@ -103,10 +105,6 @@ Utilizado o mesmo para validações na Entidade People.
 
 # Lombok
 Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
-
-# Inicialização de arquivo .sql ao iniciar a aplicação.
-Utilizado as anotações do Lombok para geração dos Getters and Setters e Construtores.
-
 
 
 
