@@ -133,4 +133,5 @@ Foi utilizado o Framework Angular no Front-End.
 - Guarda de Rotas
 - Interceptors, pois no Back-End a autenticação é via JWT.
 - WebSocket SockJS - Client.
+- Página Padrão em Caso de Rotas Nâo encontradas (Page Not Found).
 
