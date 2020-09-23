@@ -29,7 +29,8 @@ Caso Queira Executar tal aplicação em um Container Docker, ambiente Ubuntu ou 
     
    OBS: Esta é uma conta gratuita do Heroku, então ao tentar acessar a API pela primeira vez, bem provavelmente que irá demorar responder um pouco, pois por se tratar de conta gratuita o ambiente não fica disponível para acesso imediato, existirá um Delay, como uma inicialização do ambiente de onde a mesma está alocada, após aguardar uns instantes, a aplicação está disponível e com funcionamente similar a uma em produção.
    
-OBS: Foi configurado para a aplicação executar um arquivo .sql que se encontra na pasta src/main/resources/db/postgres/ para inserção do usuário no banco de dados.
+* OBS: Foi configurado para a aplicação executar um arquivo .sql que se encontra na pasta src/main/resources/db/postgres/ para inserção de um usuário já pré-definido
+no banco de dados.
 
 # Firebase Hosting(Somente Front-End)
 * Realizei o Deploy do Front-End no Firebase Hosting.
