@@ -124,7 +124,7 @@ logo existe uma comunicação bidirecional e o mais importante a conexão uma ve
 trafegadas, desta forma o fluxo de informações fica o mais próximo possível do tempo real.  A capacidade bidirecional é tão boa que se pode tunelar
 um protocolo TCP de tempo real, como Remote Desktop ou VNC, sobre um WebSocket.
 
-## Spring Security
+## Spring Security - JWT
 Para Segurança da API foi implementado o Spring Security como método de Autenticação `STATELESS`, utilizado o JWT.
 O Tempo de Expiração do Token configurei para 30 Minutos para que seja possível o teste mais facilmente por se tratar de uma POC.
 A senha ao Efetuar login, no Banco de Dados foi cadastrada utilizando o BCrypt (é um método de criptografia do tipo hash para senhas baseado no Blowfish).
