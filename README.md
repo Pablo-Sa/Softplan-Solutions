@@ -103,6 +103,7 @@ A partir deste ponto se tudo ocorrer corretamente a aplicação estará executan
 - Swagger
 - Lombook
 - Bean Validation
+- WebSocket
 
 ## Design Patterns Envolvidos
 
@@ -113,8 +114,8 @@ instância de um Objeto, simples porém muito útil, foi utilizado afim de isola
 ## Observer
 Para não me estender muito na explicação deste Pattern recomendo caso tenha curiosidade ler este artigo da DevMedia https://www.devmedia.com.br/design-patterns-observer/16875.
 
-### WebSocket
-Utilizado o SocketJS afim de implementar o Padrão WebSocket, padrão utilizado em grandes projetos como Twitter, Whatsapp e vários outros.
+### WebSocket(Criado Chat em Grupo)
+Utilizado o SocketJS afim de implementar o Padrão WebSocket para criação de um Chat na Aplicação, padrão utilizado em grandes projetos como Twitter, Whatsapp e vários outros.
 O conceito que o WebSocket traz é oriundo de trocas de mensagens em dupla direção, Cliente e Server o Front-End e Back-End, como queira adotar,
 diferentemente dos verbos HTTP, como: GET onde se é necessário realizar tal requisição ao Server afim de obter alguma mensagem e após a obtenção
 da mesma a conexão é encerrada, no WebSocket o próprio Server já lhe envia tal através do mesmo que utiliza o protocolo TCP para se comunicar
