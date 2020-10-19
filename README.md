@@ -1,8 +1,5 @@
 # POC - Sistema Completo
 
-## OBS: Realizei o Deploy dos fontes desatualizados no Heroku e Firebase.
-# Fontes Atualizados com sucesso no Heroku e no Firebase.
-
 ## Credênciais de Acesso
  - Usuário: Pablo  
  - Senha: Mudar@123
